@@ -42,7 +42,7 @@ main.design("500px", "1000px");
 
 var main_pic=new createElem("img",main.element);
 main_pic.render();
-main_pic.design("50px", "100px");
+main_pic.design("300px", "300px");
 main_pic.picture_design("0_nIqyCjF2MbjUi-Jf.jpg", "100px", "100px");
 
 
