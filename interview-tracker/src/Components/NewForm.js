@@ -70,10 +70,14 @@ class NewForm extends Component {
               return (
                 <tbody>
                   <tr>
-                    <NewFormItem
-                      prenume={this.state.prenume}
-                      nume={this.state.prenume}
-                    />
+                    <td>
+                      {" "}
+                      <NewFormItem prenume={item.prenume} />
+                    </td>
+                    <td>
+                      {" "}
+                      <NewFormItem prenume={item.nume} />
+                    </td>
                   </tr>
                 </tbody>
               );
