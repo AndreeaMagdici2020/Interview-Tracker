@@ -169,7 +169,7 @@ input {
   font-size: larger;
 }
 
-form {
+.FormAddNewApplicant {
   height: 200px;
   width: 400px;
   border: 1px solid blue;
@@ -196,4 +196,42 @@ form input {
   margin: 0px 0px 0px 0px;
   float: left;
   margin-left: 30px;
+}
+.AddUsers {
+  min-height: 500px;
+  margin: 40px auto;
+  width: 400px;
+  border: 1px solid darkblue;
+  background-color: grey;
+}
+#FormAddUsers input {
+  background-color: #a3c0c6;
+  border: 0px;
+  margin: 20px;
+  width: 200px;
+  height: 50px;
+  padding: 0px 20px;
+  margin: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: white;
+}
+#FormAddUsers input::placeholder {
+  color: #008080;
+}
+#FormAddUsers input:focus,
+#FormAddUsers button:focus {
+  outline: none;
+}
+
+#FormAddUsers button {
+  height: 50px;
+  width: 80px;
+  border-radius: 5px;
+  border: 0px;
+  background-color: #daa520;
+  cursor: pointer;
+  font-weight: bolder;
+  color: white;
+  margin: 20px;
 }

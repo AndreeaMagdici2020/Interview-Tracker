@@ -38,7 +38,7 @@ class AddNewApplicant extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="FormAddNewApplicant" onSubmit={this.handleSubmit}>
                                      
         {console.log(
           "Candidates  la  inceput  de  Form:",

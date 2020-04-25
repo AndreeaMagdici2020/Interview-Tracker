@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./Components/Header";
 import Search from "./Components/Search";
 import ATS from "./Components/ATS";
-import AddNewApplicant from "./Components/AddNewApplicant";
+//import AddNewApplicant from "./Components/AddNewApplicant";
 import BasicButtonGroup from "./Components/GroupButtons";
 const Candidates = [
   {
@@ -48,14 +47,43 @@ const Candidates = [
   },
 ];
 console.log(Candidates);
-const User = { nume: "", prenume: "" };
 class App extends Component {
-  state = {
-    SearchTerm: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      SearchTerm: "",
+      item: [],
+      prenume: "",
+      nume: "",
+      key: "",
+    };
+    this.handleInput = this.handleInput.bind(this);
+    this.addItem = this.addItem.bind(this);
+  }
 
   onSearchChange = (event) => {
     this.setState({ SearchTerm: event.target.value });
+  };
+  handleInput = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+      key: Date.now(),
+    });
+  };
+
+  addItem = (event) => {
+    event.preventDefault();
+    const newItem = {
+      prenume: this.state.prenume,
+      nume: this.state.nume,
+      key: this.state.key,
+    };
+    console.log("Added new item");
+    console.log(newItem);
+    if (newItem.prenume != "" || newItem.nume != "") {
+      const newItems = [...this.state.items, newItems];
+      this.setState({ items: newItems, prenume: "", nume: "", key: "" });
+    }
   };
 
   render() {
@@ -88,15 +116,42 @@ class App extends Component {
               Candidates={Candidates}
             />
           </div>
-          <div className="AddNewApplicant">
+          {/* <div className="AddNewApplicant">
             <AddNewApplicant
               key={Date.now()}
               style={{ display: "inline-block", float: "right" }}
               Candidates={Candidates}
               User={User}
             />
-          </div>
-          {console.log("Hello")}
+          </div> */}
+          {console.log("Hello2")}
+        </div>
+        <div className="AddUsers">
+          <header className="HeaderAddUsers">
+            <form id="FormAddUsers" onSubmit={this.addItem}>
+              <input
+                id="id1"
+                name="prenume"
+                className="addFirstName"
+                type="text"
+                placeholder="Enter first name"
+                value={this.state.prenume}
+                onChange={this.handleInput}
+              ></input>
+
+              <input
+                id="id2"
+                name="nume"
+                className="addLastName"
+                type="text"
+                placeholder="Enter last name"
+                value={this.state.nume}
+                onChange={this.handleInput}
+              ></input>
+              <br></br>
+              <button>Add</button>
+            </form>
+          </header>
         </div>
       </div>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Candidate from "./Candidate";
-import AddNewApplicant from "./AddNewApplicant";
+//import AddNewApplicant from "./AddNewApplicant";
 
 class ATS extends Component {
   render() {
