@@ -3,8 +3,10 @@ import "./App.css";
 import Header from "./Components/Header";
 import Search from "./Components/Search";
 import ATS from "./Components/ATS";
+import NewForm from "./Components/NewForm";
 //import AddNewApplicant from "./Components/AddNewApplicant";
 import BasicButtonGroup from "./Components/GroupButtons";
+import NewFormItem from "./Components/NewFormItem";
 const Candidates = [
   {
     firstName: "John",
@@ -52,38 +54,11 @@ class App extends Component {
     super(props);
     this.state = {
       SearchTerm: "",
-      item: [],
-      prenume: "",
-      nume: "",
-      key: "",
     };
-    this.handleInput = this.handleInput.bind(this);
-    this.addItem = this.addItem.bind(this);
   }
 
   onSearchChange = (event) => {
     this.setState({ SearchTerm: event.target.value });
-  };
-  handleInput = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-      key: Date.now(),
-    });
-  };
-
-  addItem = (event) => {
-    event.preventDefault();
-    const newItem = {
-      prenume: this.state.prenume,
-      nume: this.state.nume,
-      key: this.state.key,
-    };
-    console.log("Added new item");
-    console.log(newItem);
-    if (newItem.prenume != "" || newItem.nume != "") {
-      const newItems = [...this.state.items, newItems];
-      this.setState({ items: newItems, prenume: "", nume: "", key: "" });
-    }
   };
 
   render() {
@@ -126,33 +101,11 @@ class App extends Component {
           </div> */}
           {console.log("Hello2")}
         </div>
-        <div className="AddUsers">
-          <header className="HeaderAddUsers">
-            <form id="FormAddUsers" onSubmit={this.addItem}>
-              <input
-                id="id1"
-                name="prenume"
-                className="addFirstName"
-                type="text"
-                placeholder="Enter first name"
-                value={this.state.prenume}
-                onChange={this.handleInput}
-              ></input>
-
-              <input
-                id="id2"
-                name="nume"
-                className="addLastName"
-                type="text"
-                placeholder="Enter last name"
-                value={this.state.nume}
-                onChange={this.handleInput}
-              ></input>
-              <br></br>
-              <button>Add</button>
-            </form>
-          </header>
+        <br></br>
+        <div>
+          <NewForm />
         </div>
+        <div></div>
       </div>
     );
   }
