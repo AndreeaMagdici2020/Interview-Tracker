@@ -4,9 +4,8 @@ import Header from "./Components/Header";
 import Search from "./Components/Search";
 import ATS from "./Components/ATS";
 import NewForm from "./Components/NewForm";
-//import AddNewApplicant from "./Components/AddNewApplicant";
 import BasicButtonGroup from "./Components/GroupButtons";
-import NewFormItem from "./Components/NewFormItem";
+
 const Candidates = [
   {
     firstName: "John",
@@ -53,12 +52,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      SearchTerm: "",
+      searchTerm: "",
     };
   }
 
   onSearchChange = (event) => {
-    this.setState({ SearchTerm: event.target.value });
+    this.setState({ searchTerm: event.target.value.toLowerCase() });
   };
 
   render() {
@@ -78,18 +77,24 @@ class App extends Component {
           }}
         >
           <div>
-            <Search key={Date.now()} handleChange={this.onSearchChange} />
+            {/* <Search key={Date.now()} handleChange={this.onSearchChange} /> */}
           </div>
-          <div className="BasicButtonGroup">
+          {/* <div className="BasicButtonGroup">
             <BasicButtonGroup />
+          </div> */}
+          <div>
+            <NewForm
+              searchTerm={this.state.searchTerm}
+              onSearchChange={this.onSearchChange}
+            />
           </div>
           <div>
-            <p className="tableTitle"> Applicants</p>
-            <ATS
+            {/* <p className="tableTitle"> Applicants</p> */}
+            {/* <ATS
               key={Date.now()}
               SearchTerm={this.state.SearchTerm}
               Candidates={Candidates}
-            />
+            /> */}
           </div>
           {/* <div className="AddNewApplicant">
             <AddNewApplicant
@@ -102,10 +107,6 @@ class App extends Component {
           {console.log("Hello2")}
         </div>
         <br></br>
-        <div>
-          <NewForm />
-        </div>
-        <div></div>
       </div>
     );
   }

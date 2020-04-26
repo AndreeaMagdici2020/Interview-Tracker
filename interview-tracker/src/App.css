@@ -75,7 +75,6 @@
   font-weight: bold;
 }
 .MainPage {
-  border: 1px solid darkblue;
   margin-top: 300px;
 }
 
@@ -156,10 +155,22 @@ input {
   text-overflow: ellipsis;
 }
 .Search {
-  margin: 0px 0px 0px 0px;
-  margin-left: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  border: 0px;
+  margin: 20px;
+  width: 200px;
+  height: 50px;
+  padding: 0px 20px;
+  margin: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(172, 171, 224);
+}
+.Search:focus {
+  outline: none;
+}
+.Search::placeholder {
+  color: rgb(32, 31, 82);
 }
 .tableTitle {
   color: darkblue;
@@ -200,19 +211,17 @@ form input {
 .AddUsers {
   min-height: 500px;
   margin: 40px auto;
-  width: 400px;
-  border: 1px solid darkblue;
-  background-color: grey;
+  width: auto;
 }
 #FormAddUsers input {
   background-color: #a3c0c6;
   border: 0px;
   margin: 20px;
-  width: 200px;
+  width: 100px;
   height: 50px;
-  padding: 0px 20px;
-  margin: 20px;
-  font-size: 18px;
+  padding: 0px 5px;
+  margin: 10px;
+  font-size: 12px;
   border-radius: 10px;
   color: white;
 }
@@ -234,4 +243,18 @@ form input {
   font-weight: bolder;
   color: white;
   margin: 20px;
+}
+#TableNewForm {
+  min-height: 330px;
+  width: 700px;
+  border: 2px dotted darkslateblue;
+  margin-left: 30px;
+  text-align: center;
+}
+#selectFromForm {
+  margin: 30px;
+  padding: 5px;
+  background-color: #00b8e6;
+  width: 135px;
+  border-radius: 10px;
 }
