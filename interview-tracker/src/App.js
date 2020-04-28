@@ -5,7 +5,6 @@ import Search from "./Components/Search";
 import ATS from "./Components/ATS";
 import NewForm from "./Components/NewForm";
 import BasicButtonGroup from "./Components/GroupButtons";
-
 const Candidates = [
   {
     firstName: "John",
